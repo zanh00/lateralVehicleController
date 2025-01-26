@@ -3,13 +3,13 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * File: LateralController0.h
+ * File: LateralController.h
  *
- * Code generated for Simulink model 'LateralController0'.
+ * Code generated for Simulink model 'LateralController'.
  *
- * Model version                  : 1.5
+ * Model version                  : 1.6
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Sun Jan 19 19:33:02 2025
+ * C/C++ source code generated on : Sun Jan 26 14:48:33 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex-M
@@ -19,13 +19,13 @@
  * Validation result: Not run
  */
 
-#ifndef LateralController0_h_
-#define LateralController0_h_
-#ifndef LateralController0_COMMON_INCLUDES_
-#define LateralController0_COMMON_INCLUDES_
+#ifndef LateralController_h_
+#define LateralController_h_
+#ifndef LateralController_COMMON_INCLUDES_
+#define LateralController_COMMON_INCLUDES_
 #include "rtwtypes.h"
 #include "math.h"
-#endif                                 /* LateralController0_COMMON_INCLUDES_ */
+#endif                                 /* LateralController_COMMON_INCLUDES_ */
 
 #include "rtw_modelmap.h"
 
@@ -123,17 +123,17 @@ extern const ConstP rtConstP;
  * these parameters and exports their symbols.
  *
  */
-extern real32_T L;                     /* Variable: L
+extern real_T L;                       /* Variable: L
                                         * Referenced by: '<S1>/L'
                                         */
 
 /* Model entry point functions */
-extern void LateralController0_initialize(void);
-extern void LateralController0_step(void);
+extern void LateralController_initialize(void);
+extern void LateralController_step(void);
 
 /* Function to get C API Model Mapping Static Info */
 extern const rtwCAPI_ModelMappingStaticInfo*
-  LateralController0_GetCAPIStaticMap(void);
+  LateralController_GetCAPIStaticMap(void);
 
 /* Real-time Model object */
 extern RT_MODEL *const rtM;
@@ -242,7 +242,7 @@ extern RT_MODEL *const rtM;
  * '<S32>'  : 'Lateral_vehicle_MPC_controller/LateralController/Adaptive MPC Controller/MPC/optimizer'
  * '<S33>'  : 'Lateral_vehicle_MPC_controller/LateralController/Adaptive MPC Controller/MPC/optimizer/FixedHorizonOptimizer'
  */
-#endif                                 /* LateralController0_h_ */
+#endif                                 /* LateralController_h_ */
 
 /*
  * File trailer for generated code.

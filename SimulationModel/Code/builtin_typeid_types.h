@@ -5,11 +5,11 @@
  *
  * File: builtin_typeid_types.h
  *
- * Code generated for Simulink model 'LateralController0'.
+ * Code generated for Simulink model 'LateralController'.
  *
- * Model version                  : 1.5
+ * Model version                  : 1.6
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Sun Jan 19 19:33:02 2025
+ * C/C++ source code generated on : Sun Jan 26 14:48:33 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex-M

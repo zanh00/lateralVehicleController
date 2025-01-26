@@ -3,13 +3,13 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * File: LateralController0.c
+ * File: LateralController.c
  *
- * Code generated for Simulink model 'LateralController0'.
+ * Code generated for Simulink model 'LateralController'.
  *
- * Model version                  : 1.5
+ * Model version                  : 1.6
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Sun Jan 19 19:33:02 2025
+ * C/C++ source code generated on : Sun Jan 26 14:48:33 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex-M
@@ -19,11 +19,11 @@
  * Validation result: Not run
  */
 
-#include "LateralController0.h"
+#include "LateralController.h"
 #include "rtwtypes.h"
 #include <string.h>
 #include <math.h>
-#include "LateralController0_capi.h"
+#include "LateralController_capi.h"
 #include "math.h"
 
 /* Named constants for MATLAB Function: '<S32>/FixedHorizonOptimizer' */
@@ -32,7 +32,7 @@
 #define p                              (30)
 
 /* Exported block parameters */
-real32_T L = 0.2F;                     /* Variable: L
+real_T L = 0.2;                        /* Variable: L
                                         * Referenced by: '<S1>/L'
                                         */
 
@@ -1836,7 +1836,7 @@ static void mpcblock_optimizer(const real32_T rseq[60], const real32_T vseq[62],
 }
 
 /* Model step function */
-void LateralController0_step(void)
+void LateralController_step(void)
 {
   int32_T CovMat_tmp;
   int32_T i;
@@ -1881,7 +1881,7 @@ void LateralController0_step(void)
   int8_T UnknownIn[6];
   int8_T c_B[4];
   static const int8_T c[36] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, 2, 0, 0,
-    0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1 };
+    0, 0, 0, 2, 10, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1 };
 
   static const real32_T d[42] = { 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 1.0F,
     0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
@@ -1902,10 +1902,11 @@ void LateralController0_step(void)
   static const real32_T t[8] = { -1.0F, -1.0F, -1.0F, -1.0F, 1.0F, 1.0F, 1.0F,
     1.0F };
 
-  static const real32_T w[25] = { 36.3072F, 35.064F, 33.8464F, 32.6288F, 0.0F,
-    35.064F, 35.0896F, 33.8464F, 32.6288F, 0.0F, 33.8464F, 33.8464F, 33.872F,
-    32.6288F, 0.0F, 32.6288F, 32.6288F, 32.6288F, 32.6544F, 0.0F, 0.0F, 0.0F,
-    0.0F, 0.0F, 1000.0F };
+  static const real32_T w[25] = { 542.841614F, 524.203186F, 505.460785F,
+    486.718414F, 0.0F, 524.203186F, 524.099182F, 505.460785F, 486.718414F, 0.0F,
+    505.460785F, 505.460785F, 505.356812F, 486.718414F, 0.0F, 486.718414F,
+    486.718414F, 486.718414F, 486.61441F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1000.0F
+  };
 
   static const real32_T y[40] = { -1.0F, -1.0F, -1.0F, -1.0F, 1.0F, 1.0F, 1.0F,
     1.0F, -0.0F, -1.0F, -1.0F, -1.0F, 0.0F, 1.0F, 1.0F, 1.0F, -0.0F, -0.0F,
@@ -1977,7 +1978,7 @@ void LateralController0_step(void)
   b_A[2] = 0.0F;
   b_A[8] = 0.0F;
   b_A[14] = 0.0F;
-  b_A[20] = rtU.longitudinalvelocity / L;
+  b_A[20] = rtU.longitudinalvelocity / (real32_T)L;
   for (i = 0; i < 4; i++) {
     r2 = i << 1;
     b_C[r2] = (real32_T)tmp_5[r2] / (real32_T)g[r2];
@@ -2275,12 +2276,12 @@ void LateralController0_step(void)
 }
 
 /* Model initialize function */
-void LateralController0_initialize(void)
+void LateralController_initialize(void)
 {
   /* Registration code */
 
   /* Initialize DataMapInfo substructure containing ModelMap for C API */
-  LateralController0_InitializeDataMapInfo();
+  LateralController_InitializeDataMapInfo();
 
   /* InitializeConditions for Memory: '<S4>/LastPcov' */
   memcpy(&rtDW.LastPcov_PreviousInput[0], &rtConstP.LastPcov_InitialCondition[0],
