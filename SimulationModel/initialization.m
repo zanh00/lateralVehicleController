@@ -5,5 +5,8 @@ L.CoderInfo.StorageClass = 'ExportedGlobal';
 
 %%
 %Init for simulation
-egoActorID = 1;
+pose_s = struct('ActorID', 0, 'Position', [0,0,0], 'Velocity', [0,0,0], ...
+            'Roll', 0, 'Pitch', 0, 'Yaw', 0, 'AngularVelocity', [0,0,0]);
+
+Simulink.Bus.createObject(pose_s);
 
