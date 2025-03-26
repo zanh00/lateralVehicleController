@@ -1,0 +1,2 @@
+Sledenje lataral deviaton je videt že kar ok.
+Poglej računanje relative yaw angle. tu nekaj ful ni vrede.
