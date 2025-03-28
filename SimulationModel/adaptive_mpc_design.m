@@ -16,7 +16,7 @@ C2 = [0 1 0 0;
 D2 = [0 0;
      0 0];
 
-plant_model = ss(A2, B2, C2, D2, 0.05);
+plant_model = ss(A2, B2, C2, D2, Ts_mpc.Value);
 plant_model.InputName = {'Yaw rate', 'Steering rate'};
 plant_model.OutputName = {'Lateral position', 'Yaw angle'};
 

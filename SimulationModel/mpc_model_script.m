@@ -1,5 +1,5 @@
 %% create MPC controller object with sample time
-mpc3 = mpc(plant_model, 0.05);
+mpc3 = mpc(plant_model, Ts_mpc.Value);
 %% specify prediction horizon
 mpc3.PredictionHorizon = 30;
 %% specify control horizon
@@ -17,7 +17,7 @@ mpc3.MV(1).Max = 0.20;
 %% specify weights
 mpc3.Weights.MV = 0;
 mpc3.Weights.MVRate = 0.1;
-mpc3.Weights.OV = [1 5];
+mpc3.Weights.OV = [0.1 1];
 mpc3.Weights.ECR = 1000;
 
 disp(mpc3.PredictionHorizon)

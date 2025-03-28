@@ -2,6 +2,9 @@ L = Simulink.Parameter;
 L.Value = 0.2; % Wheel base default value
 L.CoderInfo.StorageClass = 'ExportedGlobal';
 
+Ts_mpc = Simulink.Parameter;
+Ts_mpc.Value = 0.02;
+
 
 %%
 %Init for simulation
