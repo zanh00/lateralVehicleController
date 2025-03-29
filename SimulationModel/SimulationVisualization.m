@@ -1,6 +1,17 @@
 
+% Scenario file that simulation was run on
+simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\imidate_heading_angle.mat";
+load(simulated_scenario);
+
+% Extract road senters from the senario file
+road_centers = data.RoadSpecifications.Centers;
+
 % Create the drivingScenario object and ego car
-[scenario, egoVehicle] = createDrivingScenario(data);
+velocity = double(out.logsout.get("velocity_sim").Values.Data);
+[scenario, egoVehicle] = createDrivingScenario(out.egoPose, velocity, road_centers);
+
+% ?? This sensor code is probably unnecesary since we don't visualize
+% ?? detection her
 
 % Create all the sensors
 sensor = createSensor(scenario);
@@ -56,22 +67,23 @@ plot(scenario, 'Parent', hAxes1,'ActorIndicators',1);
 chasePlot(egoVehicle, 'Parent', hAxes2);
 
 % assign bird's-eye plot to third axes
-egoCarBEP = birdsEyePlot('Parent',hAxes3,'XLimits',[-200 200],'YLimits',[-240 240]);
-fastTrackPlotter = trackPlotter(egoCarBEP,'MarkerEdgeColor','red','DisplayName','target','VelocityScaling',.5);
-egoTrackPlotter = trackPlotter(egoCarBEP,'MarkerEdgeColor','blue','DisplayName','ego','VelocityScaling',.5);
+egoCarBEP = birdsEyePlot('Parent',hAxes3,'XLimits',[-20 20],'YLimits',[-14 14]);
+%fastTrackPlotter = trackPlotter(egoCarBEP,'MarkerEdgeColor','red','DisplayName','target','VelocityScaling',.5);
+egoTrackPlotter = trackPlotter(egoCarBEP,'MarkerEdgeColor','blue','DisplayName','ego','VelocityScaling',.5, 'HistoryDepth', 20);
 egoLanePlotter = laneBoundaryPlotter(egoCarBEP);
 plotTrack(egoTrackPlotter, [0 0]);
 egoOutlinePlotter = outlinePlotter(egoCarBEP);
 %%
 restart(scenario)
-
+scenario.SampleTime = 0.04;
 while advance(scenario)
-    t = targetPoses(egoVehicle);
-    plotTrack(fastTrackPlotter, t.Position, t.Velocity);
+    t = actorPoses(scenario);
+    plotTrack(egoTrackPlotter, t.Position, t.Velocity);
     rbs = roadBoundaries(egoVehicle);
     plotLaneBoundary(egoLanePlotter, rbs);
-    [position, yaw, length, width, originOffset, color] = targetOutlines(egoCar);
-    plotOutline(egoOutlinePlotter, position, yaw, length, width, 'OriginOffset', originOffset, 'Color', color);
+    %[position, yaw, length, width, originOffset, color] = targetOutlines(egoCar);
+    %plotOutline(egoOutlinePlotter, position, yaw, length, width, 'OriginOffset', originOffset, 'Color', color);
+    pause(0.05);
 end
 
 %%
@@ -109,22 +121,12 @@ sensor = visionDetectionGenerator('SensorIndex', 1, ...
 
 end
 
-function [scenario, egoVehicle] = createDrivingScenario(dataset)
+function [scenario, egoVehicle] = createDrivingScenario(dataset, velocity, roadCenters)
 % createDrivingScenario Returns the drivingScenario defined in the Designer
 
 % Construct a drivingScenario object.
 scenario = drivingScenario;
 
-% Add all road segments
-roadCenters = [-0.2 -0.03 0;
-    1.135 0.013 0;
-    2.67 0.11 0;
-    3.78 0.25 0;
-    5.04 0.5 0;
-    5.97 0.67 0;
-    7.04 1.06 0;
-    8.12 1.49 0;
-    10.13 2.31 0];
 marking = [laneMarking('Solid', 'Color', [0.98 0.86 0.36], 'Width', 0.05)
     laneMarking('Solid', 'Width', 0.05)];
 laneSpecification = lanespec(1, 'Width', 0.5, 'Marking', marking);
@@ -146,7 +148,6 @@ egoVehicle = vehicle(scenario, ...
 egopath_set = dataset.get("<Position>");
 xy = egopath_set.Values.Data(1,1:2,:);
 waypoints = squeeze(permute(xy, [3,1,2]));
-egospeed = 1.5;
-smoothTrajectory(egoVehicle, waypoints, egospeed);
+smoothTrajectory(egoVehicle, waypoints, velocity);
 
 end
