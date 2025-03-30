@@ -1,6 +1,6 @@
 
 % Scenario file that simulation was run on
-simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\imidate_heading_angle.mat";
+simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\test_scenario.mat";
 load(simulated_scenario);
 
 % Extract road senters from the senario file
@@ -83,7 +83,7 @@ while advance(scenario)
     plotLaneBoundary(egoLanePlotter, rbs);
     %[position, yaw, length, width, originOffset, color] = targetOutlines(egoCar);
     %plotOutline(egoOutlinePlotter, position, yaw, length, width, 'OriginOffset', originOffset, 'Color', color);
-    pause(0.05);
+    pause(0.02);
 end
 
 %%
