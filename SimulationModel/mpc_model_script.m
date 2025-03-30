@@ -16,8 +16,8 @@ mpc3.MV(1).Min = -0.20;
 mpc3.MV(1).Max = 0.20;
 %% specify weights
 mpc3.Weights.MV = 0;
-mpc3.Weights.MVRate = 0.01;
-mpc3.Weights.OV = [5 13];
+mpc3.Weights.MVRate = 0.1;
+mpc3.Weights.OV = [4 15];
 mpc3.Weights.ECR = 1000;
 
 disp(mpc3.PredictionHorizon)

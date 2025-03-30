@@ -1,6 +1,6 @@
 
 % Scenario file that simulation was run on
-simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\test_scenario.mat";
+simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\complex.mat";
 load(simulated_scenario);
 
 % Extract road senters from the senario file
