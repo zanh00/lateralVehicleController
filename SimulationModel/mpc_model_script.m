@@ -11,7 +11,8 @@ mpc3.Model.Nominal.Y = [0;0];
 mpc3.MV(1).ScaleFactor = 0.1;
 mpc3.OV(1).ScaleFactor = 0.35;
 mpc3.OV(2).ScaleFactor = 5;
-mpc3.DV(1).ScaleFactor = 0.1;
+%mpc3.DV(1).ScaleFactor = 0.01;
+mpc3.DisturbanceVariables.ScaleFactor = 10;
 %% specify constraints for MV and MV Rate
 mpc3.MV(1).Min = -0.20;
 mpc3.MV(1).Max = 0.20;
