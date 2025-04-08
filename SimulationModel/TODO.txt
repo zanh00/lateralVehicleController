@@ -1,0 +1,4 @@
+Sledenje lataral deviaton je videt že kar ok. Gain mora bit pozitive! -> Pusti tak kot je
+Poglej računanje relative yaw angle: Sedaj prištejemo dejanski yaw angle vozila našemo relative angle -> sedaj je končni relative angle klko tlko vrede
+AMPAK sedaj z utežmi skoraj povsem na relative yaw angle, se nam ob negativenm kotu steering angle povečuje v plus (kar je vredu) nato pa začne yaw angle it v
+pozitivno ampak steering angle pa še vedno narašča v pozitivno smer, ZAKAJJJJJJ ??????
