@@ -7,36 +7,28 @@ A3 =[0 0 0 0
      0 0  0 v/L;
      0 0 0  0];
 
-B3 = [0
-      0;
-      0;
-      1];
+% B3 = [0
+%       0;
+%       0;
+%       1];
+
+B3 = [0 0
+      1 0;
+      0 0;
+      0 1];
 
 C3 = [0 1 0 0;
       0 0 1 0];
-D3 = [0;
-      0];
-
-% A3 =[0  v v;
-%      0  0 v/l;
-%      0 0  0];
-% 
-% B3 = [0
-%       0;
-%       1];
-% 
-% C3 = [1 0 0;
-%       0 1 0];
-% D3 = [0;
-%       0];
+D3 = [0 0;
+      0 0];
 
 %plant_model_noMD = ss(A3, B3, C3, D3, Ts);
 plant_model_noMD = ss(A3, B3, C3, D3, 0);
 
-plant_model_noMD.InputName = {'Steering rate'};
+plant_model_noMD.InputName = {'Yaw Rate', 'Steering rate'};
 plant_model_noMD.OutputName = {'Lateral position', 'Yaw angle'};
 
-plant_model_noMD=setmpcsignals(plant_model_noMD, 'MV', 1, 'MO', [1 2]);
+plant_model_noMD=setmpcsignals(plant_model_noMD, 'MV', 2, 'MO', [1 2], 'MD', 1);
 
 plant_discrete = c2d(plant_model_noMD, Ts, 'zoh');
 
