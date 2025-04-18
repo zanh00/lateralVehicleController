@@ -9,22 +9,23 @@ mpc1.ControlHorizon = 3;
 mpc1.Model.Nominal.U = 0;
 mpc1.Model.Nominal.Y = [0;0];
 %%
-mpc1.OV(1).ScaleFactor = 0.5;
+mpc1.OV(1).ScaleFactor = 0.05;
 mpc1.OV(2).ScaleFactor = 5;
-mpc1.MV(1).ScaleFactor = 5;
+mpc1.MV(1).ScaleFactor = 1;
+mpc1.OV(3).ScaleFactor = 1;
 mpc1.OV(1).Min = -0.3;
 mpc1.OV(1).Max = 0.3;
 %% specify weights
 mpc1.Weights.MV = 0;
 mpc1.Weights.MVRate = 0.1;
-mpc1.Weights.OV = [1 3];
+mpc1.Weights.OV = [1 7 0];
 mpc1.Weights.ECR = 100000;
 
 %% 
-mpc1.MV(1).Min = -15;
-mpc1.MV(1).Max = 15;
-mpc1.MV(1).RateMin = -10;
-mpc1.MV(1).RateMax = 10;
+mpc1.OV(3).Min = -15;
+mpc1.OV(3).Max = 15;
+mpc1.MV(1).Min = -10;
+mpc1.MV(1).Max = 10;
 %% specify simulation options
 options = mpcsimopt();
 options.RefLookAhead = 'off';

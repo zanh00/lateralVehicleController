@@ -1,6 +1,6 @@
 
 % Scenario file that simulation was run on
-simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\agressive_turn.mat";
+simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\early_little_turn.mat";
 load(simulated_scenario);
 
 % Extract road senters from the senario file
