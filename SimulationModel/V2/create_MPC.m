@@ -10,11 +10,11 @@ mpc1.Model.Nominal.U = 0;
 mpc1.Model.Nominal.Y = [0;0];
 %%
 mpc1.OV(1).ScaleFactor = 0.05;
-mpc1.OV(2).ScaleFactor = 5;
+mpc1.OV(2).ScaleFactor = 2.5;
 mpc1.MV(1).ScaleFactor = 1;
 mpc1.OV(3).ScaleFactor = 1;
-mpc1.OV(1).Min = -0.3;
-mpc1.OV(1).Max = 0.3;
+%mpc1.OV(1).Min = -0.3;
+%mpc1.OV(1).Max = 0.3;
 %% specify weights
 mpc1.Weights.MV = 0;
 mpc1.Weights.MVRate = 0.1;
