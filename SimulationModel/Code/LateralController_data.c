@@ -7,15 +7,15 @@
  *
  * Code generated for Simulink model 'LateralController'.
  *
- * Model version                  : 1.6
+ * Model version                  : 1.21
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Sun Jan 26 14:48:33 2025
+ * C/C++ source code generated on : Sun Apr 27 19:44:56 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex-M
  * Code generation objectives:
- *    1. RAM efficiency
- *    2. Execution efficiency
+ *    1. Execution efficiency
+ *    2. RAM efficiency
  * Validation result: Not run
  */
 
@@ -26,14 +26,12 @@ const ConstP rtConstP = {
   /* Expression: lastPcov
    * Referenced by: '<S4>/LastPcov'
    */
-  { 5.88597155F, -5.88597155F, -5.51453E-15F, 6.31492073E-16F, 0.193881944F,
-    0.973496199F, -5.88597155F, 10.8859711F, 20.0F, -3.73000726E-16F,
-    -0.193881944F, -0.973496199F, -5.51453E-15F, 20.0F, 100.0F, 1.34624484E-15F,
-    -1.8679157E-16F, 9.90186E-16F, 6.31492073E-16F, -3.73000726E-16F,
-    1.34624484E-15F, 1.0F, 1.23573802E-17F, 5.16271379E-17F, 0.193881944F,
-    -0.193881944F, -1.8679157E-16F, 1.23573802E-17F, 0.0728407055F,
-    0.0969762504F, 0.973496199F, -0.973496199F, 9.90186E-16F, 5.16271379E-17F,
-    0.0969762504F, 0.494298846F }
+  { 0.00417106133F, 0.052087795F, 0.00127798913F, -0.000212695319F,
+    -0.000994951813F, 0.052087795F, 1.16468275F, -0.0632412732F, -0.028264679F,
+    0.0556452535F, 0.00127798913F, -0.0632412732F, 0.0886882693F, 0.0302617494F,
+    -0.076040633F, -0.000212695319F, -0.028264679F, 0.0302617494F, 0.0316593833F,
+    -0.0285222679F, -0.000994951813F, 0.0556452535F, -0.076040633F,
+    -0.0285222679F, 0.0918005407F }
 };
 
 /*

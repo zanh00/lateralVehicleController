@@ -1,6 +1,6 @@
 
 % Scenario file that simulation was run on
-simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\complex.mat";
+simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\little_less_complex.mat";
 load(simulated_scenario);
 
 % Extract road senters from the senario file
@@ -83,7 +83,7 @@ while advance(scenario)
     plotLaneBoundary(egoLanePlotter, rbs);
     %[position, yaw, length, width, originOffset, color] = targetOutlines(egoCar);
     %plotOutline(egoOutlinePlotter, position, yaw, length, width, 'OriginOffset', originOffset, 'Color', color);
-    pause(0.02);
+    pause(0.01);
 end
 
 %%
@@ -148,6 +148,9 @@ egoVehicle = vehicle(scenario, ...
 egopath_set = dataset.get("<Position>");
 xy = egopath_set.Values.Data(1,1:2,:);
 waypoints = squeeze(permute(xy, [3,1,2]));
-smoothTrajectory(egoVehicle, waypoints, velocity);
+
+%Downsampling the waypoints
+waypoints_d = waypoints(1:15:end, :); 
+smoothTrajectory(egoVehicle, waypoints_d, velocity);
 
 end

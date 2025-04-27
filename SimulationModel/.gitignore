@@ -3,3 +3,5 @@
 *.slx.autosave
 /SimulatedScenarios/*
 *.asv
+/V2/slprj/
+/SimulationResults/*
