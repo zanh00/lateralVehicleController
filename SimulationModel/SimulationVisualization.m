@@ -1,6 +1,6 @@
 
 % Scenario file that simulation was run on
-simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\complex.mat";
+simulated_scenario = "C:\Users\zanhe\Documents\lateralVehicleController\SimulationModel\driving_scenarios\little_less_complex.mat";
 load(simulated_scenario);
 
 % Extract road senters from the senario file
@@ -150,7 +150,7 @@ xy = egopath_set.Values.Data(1,1:2,:);
 waypoints = squeeze(permute(xy, [3,1,2]));
 
 %Downsampling the waypoints
-waypoints_d = waypoints(1:10:end, :); 
+waypoints_d = waypoints(1:15:end, :); 
 smoothTrajectory(egoVehicle, waypoints_d, velocity);
 
 end
