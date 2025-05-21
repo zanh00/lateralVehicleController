@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'LateralController'.
  *
- * Model version                  : 1.21
+ * Model version                  : 1.22
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Sun Apr 27 19:44:56 2025
+ * C/C++ source code generated on : Wed May 21 19:29:22 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex-M
