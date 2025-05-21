@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'LateralController'.
  *
- * Model version                  : 1.21
+ * Model version                  : 1.22
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Sun Apr 27 19:44:56 2025
+ * C/C++ source code generated on : Wed May 21 19:29:22 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex-M
@@ -4275,9 +4275,9 @@ void LateralController_step(void)
   static const real32_T h[9] = { 0.05F, 2.5F, 1.0F, 0.05F, 2.5F, 1.0F, 0.05F,
     2.5F, 1.0F };
 
-  static const int8_T n[46] = { 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15,
-    15, 15, 15, 15, 15, 15, 15, 15, 15, 10, 10, 10, 10, 10, 10 };
+  static const int8_T n[46] = { 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
+    30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30,
+    30, 30, 30, 30, 30, 30, 30, 30, 30, 15, 15, 15, 15, 15, 15 };
 
   static const real32_T w[230] = { -0.0F, -0.0F, -0.0F, -0.0F, -0.0F, -0.0F,
     -0.0F, -0.0F, -0.0F, -0.0F, -0.0F, -0.0F, -0.0F, -0.0F, -0.0F, -0.0F, -0.0F,
