@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'LateralController'.
  *
- * Model version                  : 1.23
+ * Model version                  : 1.24
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Fri May 23 19:07:56 2025
+ * C/C++ source code generated on : Sun May 25 09:58:03 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex-M
@@ -26,7 +26,7 @@
 #include <stddef.h>
 
 /* Named constants for MATLAB Function: '<S32>/FixedHorizonOptimizer' */
-#define RMDscale                       (0.1F)
+#define RMDscale                       (0.0666666701F)
 #define Wdu                            (0.01F)
 #define Wu                             (0.0F)
 #define degrees                        (4)
@@ -4258,7 +4258,7 @@ void LateralController_step(void)
     0.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F };
 
   static const real32_T d[40] = { 0.000415238086F, 0.00114285713F, 0.02F, 0.0F,
-    0.0F, -0.004F, -0.2F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
+    0.0F, -0.006F, -0.3F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
     0.0F, 0.0F, 0.02F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.02F, 0.0F, 0.0F, 0.0F,
     0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F };
 
@@ -4268,7 +4268,7 @@ void LateralController_step(void)
   static const int8_T f[24] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
     0, 0, 0, 1, 0, 0, 0, 1 };
 
-  static const int8_T g[6] = { 1, 1, 1, 10, 10, 10 };
+  static const int8_T g[6] = { 1, 1, 1, 15, 15, 15 };
 
   static const int8_T tmp_3[9] = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };
 
@@ -4306,9 +4306,9 @@ void LateralController_step(void)
     0.14F, 0.16F, 0.18F, 0.2F, 0.22F, 0.24F, 0.26F, 0.28F, 0.3F, 0.32F, 0.34F,
     0.36F, 0.38F, 0.4F, -1.0F, -1.0F, -1.0F, 1.0F, 1.0F, 1.0F };
 
-  static const real32_T y[16] = { 136.169952F, 117.93174F, 101.343895F, 0.0F,
-    117.93174F, 102.24189F, 87.9319534F, 0.0F, 101.343895F, 87.9319534F,
-    75.7148F, 0.0F, 0.0F, 0.0F, 0.0F, 100000.0F };
+  static const real32_T y[16] = { 511.424896F, 442.42511F, 379.732971F, 0.0F,
+    442.42511F, 383.068695F, 329.064819F, 0.0F, 379.732971F, 329.064819F,
+    282.951904F, 0.0F, 0.0F, 0.0F, 0.0F, 100000.0F };
 
   static const real32_T bb[184] = { -0.02F, -0.04F, -0.06F, -0.08F, -0.1F,
     -0.12F, -0.14F, -0.16F, -0.18F, -0.2F, -0.22F, -0.24F, -0.26F, -0.28F, -0.3F,
@@ -4329,7 +4329,7 @@ void LateralController_step(void)
     1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 0.0F, 0.0F, 0.0F, 0.0F,
     0.0F, 0.0F };
 
-  static const real32_T cb[3] = { 1.0F, 64.0F, 0.0F };
+  static const real32_T cb[3] = { 4.0F, 36.0F, 0.0F };
 
   static const real32_T db[60] = { 1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
     0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F,
