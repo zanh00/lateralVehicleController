@@ -1,2 +1,0 @@
-"LateralController0_ert_rtw" directory contains generated code. Move the usefull files from there to "Code" directory manualy, since the original directory is ignored by 
-git ignored since a lot of junk is generated alongside the code.
